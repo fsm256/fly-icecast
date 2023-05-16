@@ -1,0 +1,58 @@
+<icecast>
+    <location>Earth</location>
+    
+    <admin>icecast@localhost</admin>
+
+    <limits>
+        <clients>128</clients>
+        <sources>2</sources>
+        <queue-size>524288</queue-size>
+        <client-timeout>30</client-timeout>
+        <header-timeout>15</header-timeout>
+        <source-timeout>10</source-timeout>
+        <burst-on-connect>1</burst-on-connect>
+        <burst-size>65535</burst-size>
+    </limits>
+
+    <authentication>
+        <!-- if you change this, make sure to update the source password in the ezstream config -->
+        <source-password>sourcepassword123</source-password>
+        <relay-password>relaypassword123</relay-password>
+        <admin-user>admin</admin-user>
+        <admin-password>adminpassword123</admin-password>
+    </authentication>
+
+    <hostname>localhost</hostname>
+
+    <listen-socket>
+        <port>8888</port>
+    </listen-socket>
+
+    <http-headers>
+        <header name="Access-Control-Allow-Origin" value="*" />
+    </http-headers>
+
+    <fileserve>0</fileserve>
+
+    <paths>
+        <basedir>/usr/share/icecast</basedir>
+        <logdir>/app</logdir>
+        <alias source="/" destination="/stream" />
+        <alias source="/listen.pls" destination="/stream" />
+    </paths>
+
+    <logging>
+        <accesslog>ice-access.log</accesslog>
+        <errorlog>ice-error.log</errorlog>
+        <loglevel>3</loglevel> <!-- 4 Debug, 3 Info, 2 Warn, 1 Error -->
+        <logsize>10000</logsize>
+    </logging>
+
+    <security>
+        <chroot>0</chroot>
+        <changeowner>
+            <user>icecast</user>
+            <group>icecast</group>
+        </changeowner>
+    </security>
+</icecast>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ezstream>
+	<servers>
+		<server>
+			<hostname>127.0.0.1</hostname>
+			<port>8888</port>
+			<user>source</user>
+			<password>sourcepassword123</password>
+			<tls>none</tls>
+			<reconnect_attempts>5</reconnect_attempts>
+		</server>
+	</servers>
+
+	<streams>
+		<stream>
+			<mountpoint>/stream</mountpoint>
+			<format>MP3</format>
+		</stream>
+	</streams>
+
+	<intakes>
+		<intake>
+			<filename>/app/mp3/playlist.m3u</filename>
+			<stream_once>No</stream_once>
+			<shuffle>Yes</shuffle>
+		</intake>
+	</intakes>
+</ezstream>
